@@ -55,6 +55,11 @@ begin
   M.Num := 234;
 
   try
+// Sending doesn't seem to null M.Num.
+// {
+//    "Name": "Joe",
+//    "Num": null
+// }
     Context.Request.BodyFor<TTestModel>(M);
 
     Render(HTTP_STATUS.OK, ObjectDict(False)
